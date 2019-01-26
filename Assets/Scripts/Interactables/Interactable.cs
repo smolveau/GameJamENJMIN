@@ -62,6 +62,13 @@ public class Interactable : MonoBehaviour
     
     public void Control(Vector2 input)
     {
-        rb.velocity = Camera.main.transform.rotation * input * m_force;
+        if(rb)
+            rb.velocity = Camera.main.transform.rotation * input * m_force;
+    }
+
+    public void TryGrab()
+    {
+        if(rb)
+            rb.GetComponent<Grabber>().Use();
     }
 }

@@ -51,6 +51,14 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
+    public void TryGrab()
+    {
+        if(interactable != null && interactable.m_activePlayer == this)
+        {
+            interactable.TryGrab();
+        }
+    }
+
     public void Use()
     {
         if(interactable != null)
