@@ -7,8 +7,6 @@ public class Interactable : MonoBehaviour
     private BoxCollider2D bc;
     [SerializeField] Rigidbody2D rb;
     [HideInInspector] public PlayerInteraction m_activePlayer;
-
-    [SerializeField]
     SpriteRenderer m_sprite;
 
     [SerializeField, Range(0,100)] float m_force;
@@ -64,6 +62,6 @@ public class Interactable : MonoBehaviour
     
     public void Control(Vector2 input)
     {
-        rb.AddForce(input * m_force);
+        rb.velocity = input * m_force;
     }
 }

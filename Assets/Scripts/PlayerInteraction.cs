@@ -17,6 +17,11 @@ public class PlayerInteraction : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        if(interactable)
+        {
+            interactable.UnSubscribe(this);
+        }
+
         interactable = col.GetComponent<Interactable>();
 
         if(interactable)
@@ -27,12 +32,15 @@ public class PlayerInteraction : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D col)
     {
-        if(interactable)
+        if(m_rgbd.simulated)
         {
-            interactable.UnSubscribe(this);
-        }
+            if(interactable)
+            {
+                interactable.UnSubscribe(this);
+            }
 
-        interactable = null;
+            interactable = null;
+        }
     }
 
     public void Control(Vector2 input)
@@ -51,13 +59,15 @@ public class PlayerInteraction : MonoBehaviour
             {
                 Debug.Log("Player using interactable");
                 interactable.Use(this);
-                m_rgbd.constraints = RigidbodyConstraints2D.FreezeAll;
+                m_rgbd.simulated = false;
+                transform.SetParent(interactable.transform, true);
             }
             else if(interactable.m_activePlayer == this)
             {
                 Debug.Log("Player unusing interactable");
                 interactable.UnUse();
-                m_rgbd.constraints = RigidbodyConstraints2D.FreezeRotation;
+                m_rgbd.simulated = true;
+                transform.SetParent(null, true);
             }
         }
     }
