@@ -6,12 +6,12 @@ public class PlayerInteraction : MonoBehaviour
 {
     private bool in_interaction = false;
     private Interactable interactable;
-    private PlayerMovement m_playerMovement;
+    private CharacterController m_characterController;
 
     // Start is called before the first frame update
     void Start()
     {
-        m_playerMovement = GetComponent<PlayerMovement>();
+        m_characterController = GetComponent<CharacterController>();
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -32,13 +32,13 @@ public class PlayerInteraction : MonoBehaviour
             {
                 Debug.Log("Player using interactable");
                 interactable.Use(this);
-                m_playerMovement.enabled = false;
+                m_characterController.enabled = false;
             }
             else
             {
                 Debug.Log("Player unusing interactable");
                 interactable.UnUse();
-                m_playerMovement.enabled = true;
+                m_characterController.enabled = true;
             }
         }
     }

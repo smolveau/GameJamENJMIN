@@ -26,6 +26,6 @@ public class XInputManager : MonoBehaviour
         if(XCI.GetButtonDown(XboxButton.Y, m_controller))
             m_Y.Invoke();
 
-        m_leftStick.Invoke(new Vector2(XCI.GetAxis(XboxAxis.LeftStickX, m_controller), XCI.GetAxis(XboxAxis.LeftStickY, m_controller)));
+        m_leftStick.Invoke(new Vector2(XCI.GetAxis(XboxAxis.LeftStickX, m_controller), 0));
     }
 }
