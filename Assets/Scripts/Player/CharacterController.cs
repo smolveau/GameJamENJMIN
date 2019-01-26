@@ -93,7 +93,7 @@ public class CharacterController : MonoBehaviour
     public void Move(Vector2 input)
     {
         if(enabled)
-            m_Rigidbody2D.AddForce(input * m_Speed);
+            m_Rigidbody2D.AddForce(Vector2.right * input * m_Speed);
     }
 
 

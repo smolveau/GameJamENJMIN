@@ -6,39 +6,58 @@ public class PlayerInteraction : MonoBehaviour
 {
     private bool in_interaction = false;
     private Interactable interactable;
-    private CharacterController m_characterController;
+
+    Rigidbody2D m_rgbd;
 
     // Start is called before the first frame update
     void Start()
     {
-        m_characterController = GetComponent<CharacterController>();
+        m_rgbd = GetComponent<Rigidbody2D>();
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
         interactable = col.GetComponent<Interactable>();
+
+        if(interactable)
+        {
+            interactable.Subscribe(this);
+        }
     }
 
     void OnTriggerExit2D(Collider2D col)
     {
+        if(interactable)
+        {
+            interactable.UnSubscribe(this);
+        }
+
         interactable = null;
+    }
+
+    public void Control(Vector2 input)
+    {
+        if(interactable != null && interactable.m_activePlayer == this)
+        {
+            interactable.Control(input);
+        }
     }
 
     public void Use()
     {
         if(interactable != null)
         {
-            if (!interactable.m_player)
+            if (!interactable.m_activePlayer)
             {
                 Debug.Log("Player using interactable");
                 interactable.Use(this);
-                m_characterController.enabled = false;
+                m_rgbd.constraints = RigidbodyConstraints2D.FreezeAll;
             }
-            else
+            else if(interactable.m_activePlayer == this)
             {
                 Debug.Log("Player unusing interactable");
                 interactable.UnUse();
-                m_characterController.enabled = true;
+                m_rgbd.constraints = RigidbodyConstraints2D.FreezeRotation;
             }
         }
     }
