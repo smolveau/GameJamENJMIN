@@ -5,7 +5,7 @@ using UnityEngine;
 public class Grabber : MonoBehaviour
 {
     private FixedJoint2D fixedJoint2D;
-    public Rigidbody2D m_rgbd;
+    private Collider2D m_collider2D;
 
     private void Update()
     {
@@ -17,27 +17,35 @@ public class Grabber : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        m_rgbd = collider.GetComponent<Rigidbody2D>();
-    }
+        if (!fixedJoint2D)
+        {
+            m_collider2D = collider;
+        }
 
+
+    }
 
     private void OnTriggerExit2D(Collider2D collider)
     {
-        m_rgbd = null;
+        if (!fixedJoint2D)
+        {
+            m_collider2D = null;
+        }
     }
 
     public void Use()
     {
-        if (m_rgbd != null)
+        if (m_collider2D)
         {
             if (!fixedJoint2D)
             {
                 fixedJoint2D = gameObject.AddComponent<FixedJoint2D>();
-                fixedJoint2D.connectedBody = m_rgbd;
+                fixedJoint2D.connectedBody = m_collider2D.GetComponent<Rigidbody2D>();
             }
             else
             {
                 Destroy(fixedJoint2D);
+                m_collider2D = null;
             }
         }
     }
