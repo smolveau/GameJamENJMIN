@@ -687,8 +687,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 0
   m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
+    m_LowerAngle: 45
+    m_UpperAngle: 180
 --- !u!233 &1992816054553661065
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -711,8 +711,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 0
   m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
+    m_LowerAngle: 90
+    m_UpperAngle: 270
 --- !u!61 &7684906213442243146
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1049,8 +1049,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 0
   m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
+    m_LowerAngle: 170
+    m_UpperAngle: 290
 --- !u!233 &1992816054713929282
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -1073,8 +1073,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 0
   m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
+    m_LowerAngle: -90
+    m_UpperAngle: 90
 --- !u!61 &8991422857165758011
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1316,8 +1316,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 0
   m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
+    m_LowerAngle: 120
+    m_UpperAngle: 245
 --- !u!233 &1992816054945992164
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -1340,8 +1340,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 0
   m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
+    m_LowerAngle: 150
+    m_UpperAngle: 30
 --- !u!61 &1845927507160123591
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1526,8 +1526,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 0
   m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
+    m_LowerAngle: 120
+    m_UpperAngle: 245
 --- !u!233 &1992816055107802629
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -1550,8 +1550,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 0
   m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
+    m_LowerAngle: 30
+    m_UpperAngle: 150
 --- !u!61 &3825525004601210924
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1974,6 +1974,7 @@ GameObject:
   - component: {fileID: 1992816055806309457}
   - component: {fileID: 1992816055806309456}
   - component: {fileID: 1992816055806309458}
+  - component: {fileID: 995038667}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -2073,6 +2074,30 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!233 &995038667
+HingeJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992816055806309549}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1992816055872087912}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0.5}
+  m_ConnectedAnchor: {x: -0.49999988, y: 0.000000021855689}
+  m_UseMotor: 0
+  m_Motor:
+    m_MotorSpeed: 0
+    m_MaximumMotorForce: 10000
+  m_UseLimits: 1
+  m_AngleLimits:
+    m_LowerAngle: -30
+    m_UpperAngle: 30
 --- !u!1 &1992816055872087909
 GameObject:
   m_ObjectHideFlags: 0
@@ -2084,7 +2109,6 @@ GameObject:
   - component: {fileID: 1992816055872087914}
   - component: {fileID: 1992816055872087918}
   - component: {fileID: 1992816055872087912}
-  - component: {fileID: 1992816055872087915}
   - component: {fileID: 470204034294918136}
   m_Layer: 9
   m_Name: Head
@@ -2176,30 +2200,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!233 &1992816055872087915
-HingeJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1992816055872087909}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 1992816055806309458}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: -0.5, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0.5}
-  m_UseMotor: 0
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 0
-  m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
 --- !u!61 &470204034294918136
 BoxCollider2D:
   m_ObjectHideFlags: 0

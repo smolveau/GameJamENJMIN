@@ -62,6 +62,6 @@ public class Interactable : MonoBehaviour
     
     public void Control(Vector2 input)
     {
-        rb.velocity = input * m_force;
+        rb.velocity = Camera.main.transform.rotation * input * m_force;
     }
 }
