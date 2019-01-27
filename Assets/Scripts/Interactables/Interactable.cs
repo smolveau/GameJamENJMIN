@@ -5,50 +5,70 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
     private BoxCollider2D bc;
-    private Rigidbody2D rb;
-    public PlayerInteraction m_player;
+    [SerializeField] Rigidbody2D rb;
+    [HideInInspector] public PlayerInteraction m_activePlayer;
+    SpriteRenderer m_sprite;
 
-    [SerializeField]
-    private GameObject button_sprite;
+    [SerializeField, Range(0,100)] float m_force;
+
+    [SerializeField] Color m_colIdle, m_colSelected, m_colActive;
+    
+    List<PlayerInteraction> m_playerList;
 
 
     public void Use(PlayerInteraction player)
     {
-        m_player = player;
+        if(!m_activePlayer)
+        {
+            m_activePlayer = player;
+            m_sprite.color = m_colActive;
+        }
     }
 
     public void UnUse()
     {
-        m_player = null;
+        m_activePlayer = null;
+        m_sprite.color = m_colSelected;
+    }
+
+    public void Subscribe(PlayerInteraction player)
+    {
+        m_playerList.Add(player);
+
+        if(!m_activePlayer)
+        {
+            m_sprite.color = m_colSelected;
+        }
+    }
+
+    public void UnSubscribe(PlayerInteraction player)
+    {
+        m_playerList.Remove(player);
+
+        if(!m_activePlayer)
+        {
+            if(m_playerList.Count == 0)
+                m_sprite.color = m_colIdle;
+        }
     }
     
     void Start()
     {
-        rb = gameObject.GetComponent<Rigidbody2D>();
         bc = gameObject.GetComponent<BoxCollider2D>();
+        m_playerList = new List<PlayerInteraction>();
+
+        m_sprite = GetComponent<SpriteRenderer>();
     }
     
-    void Update()
+    public void Control(Vector2 input)
     {
-
+        if(rb)
+            rb.velocity = Camera.main.transform.rotation * input * m_force;
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+    public void TryGrab()
     {
-        if(col.tag == "Player")
-        {
-            // Afficher bouton et player peut interagir avec
-            button_sprite.active = true;
-        }
-            
-    }
-
-    void OnTriggerExit2D(Collider2D col)
-    {
-        if (col.tag == "Player")
-        {
-            // Afficher bouton et player peut interagir avec
-            button_sprite.active = false;
-        }
+        if(rb)
+            rb.GetComponent<Grabber>().Use();
     }
 }
