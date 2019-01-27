@@ -1069,6 +1069,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbebecb4ac8854941affa5122c3960fb, type: 3}
+--- !u!95 &1191377138 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1191377138, guid: 7819be763900c084b95bb8de29de23d8,
+    type: 3}
+  m_PrefabInstance: {fileID: 2732132838324907913}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1844881553
 GameObject:
   m_ObjectHideFlags: 0
@@ -1208,15 +1214,15 @@ MonoBehaviour:
   m_onEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2144723609}
-        m_MethodName: set_enabled
-        m_Mode: 6
+      - m_Target: {fileID: 1191377138}
+        m_MethodName: SetTrigger
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: End
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -1266,18 +1272,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2144723609 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8065810519092857761, guid: 7819be763900c084b95bb8de29de23d8,
-    type: 3}
-  m_PrefabInstance: {fileID: 2732132838324907913}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 465477a04ba8a444a9c7a5af8cc99003, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2732132838324907913
 PrefabInstance:
   m_ObjectHideFlags: 0
