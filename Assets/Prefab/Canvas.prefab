@@ -186,11 +186,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2732132837212229059}
     m_Modifications:
-    - target: {fileID: 3108990317607703592, guid: 150d52eb7f0e2014e99b9a24b323654f,
-        type: 3}
-      propertyPath: m_Name
-      value: Timer
-      objectReference: {fileID: 0}
     - target: {fileID: 7277334533027073331, guid: 150d52eb7f0e2014e99b9a24b323654f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -244,6 +239,16 @@ PrefabInstance:
     - target: {fileID: 7277334533027073331, guid: 150d52eb7f0e2014e99b9a24b323654f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108990317607703592, guid: 150d52eb7f0e2014e99b9a24b323654f,
+        type: 3}
+      propertyPath: m_Name
+      value: Timer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108990317607703593, guid: 150d52eb7f0e2014e99b9a24b323654f,
+        type: 3}
+      propertyPath: timer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3108990317607703593, guid: 150d52eb7f0e2014e99b9a24b323654f,

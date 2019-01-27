@@ -443,12 +443,12 @@ FixedJoint2D:
   m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
+  m_ConnectedRigidBody: {fileID: 8941452865534737029}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.5, y: 0}
-  m_ConnectedAnchor: {x: 0.00000071525557, y: 0.0000000596046}
+  m_ConnectedAnchor: {x: -0.000000119209204, y: 0.000000059604638}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1 &1992816054713929308
@@ -1483,12 +1483,12 @@ FixedJoint2D:
   m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
+  m_ConnectedRigidBody: {fileID: 793591661046433253}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.5, y: 0}
-  m_ConnectedAnchor: {x: 5.2108023e-15, y: 0.00000011920926}
+  m_ConnectedAnchor: {x: 5.2107997e-15, y: 0.00000011920926}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1 &1992816055806309549
@@ -1894,12 +1894,12 @@ FixedJoint2D:
   m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
+  m_ConnectedRigidBody: {fileID: 4765309469979520246}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.5, y: 0}
-  m_ConnectedAnchor: {x: -0.00000011920926, y: 0.000000059604638}
+  m_ConnectedAnchor: {x: -0.000000119209204, y: 0.000000059604638}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1 &3668050452411287397
@@ -2143,7 +2143,7 @@ PrefabInstance:
         type: 3}
       propertyPath: rb
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8941452865534737029}
     - target: {fileID: 8535598322441572402, guid: afc6e9537c10b0a4d898b826edb6de88,
         type: 3}
       propertyPath: m_force
@@ -2332,6 +2332,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc2e136a27ee81f44b152ea7047ff5e4, type: 3}
+--- !u!50 &793591661046433253 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 2607914105122397801, guid: fc2e136a27ee81f44b152ea7047ff5e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 3400863572458183564}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &793591661046433254 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2607914105122397802, guid: fc2e136a27ee81f44b152ea7047ff5e4,
@@ -2440,7 +2446,7 @@ PrefabInstance:
         type: 3}
       propertyPath: rb
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 793591661046433253}
     - target: {fileID: 8535598322441572402, guid: afc6e9537c10b0a4d898b826edb6de88,
         type: 3}
       propertyPath: m_force
@@ -2548,6 +2554,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc2e136a27ee81f44b152ea7047ff5e4, type: 3}
+--- !u!50 &8941452865534737029 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 2607914105122397801, guid: fc2e136a27ee81f44b152ea7047ff5e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 6352116229688632556}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8941452865534737030 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2607914105122397802, guid: fc2e136a27ee81f44b152ea7047ff5e4,
@@ -2631,6 +2643,12 @@ PrefabInstance:
 --- !u!4 &4765309469979520245 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2607914105122397802, guid: fc2e136a27ee81f44b152ea7047ff5e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 7354637369861091999}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &4765309469979520246 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 2607914105122397801, guid: fc2e136a27ee81f44b152ea7047ff5e4,
     type: 3}
   m_PrefabInstance: {fileID: 7354637369861091999}
   m_PrefabAsset: {fileID: 0}
@@ -2736,7 +2754,7 @@ PrefabInstance:
         type: 3}
       propertyPath: rb
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4765309469979520246}
     - target: {fileID: 8535598322441572402, guid: afc6e9537c10b0a4d898b826edb6de88,
         type: 3}
       propertyPath: m_force
