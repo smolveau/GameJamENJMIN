@@ -24,8 +24,12 @@ public class Timer : MonoBehaviour
 
     IEnumerator Wait()
     {
-        timer += 1;
-        UpdateTimer();
+        if(enabled)
+        {
+            timer += 1;
+            UpdateTimer();
+        }
+            
         yield return new WaitForSeconds(1);
         clock = false;
     }
